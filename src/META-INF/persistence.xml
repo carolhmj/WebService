@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0"
+xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+<persistence-unit name="ServerWS" transaction-type="RESOURCE_LOCAL">
+<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+<class>com.ws.model.entidade.Empresa</class>
+<class>com.ws.model.entidade.Usuario</class>
+<class>com.ws.model.entidade.Protocolo</class>
+<class>com.ws.model.entidade.EmpresaProtocolo</class>
+<properties>    
+
+<property name="hibernate.archive.autodetection" value="class" />
+
+<!-- Conexão com o banco de dados -->
+<property name="hibernate.connection.username" value="postgres" />
+<property name="hibernate.connection.driver_class" value="org.postgresql.Driver" />
+<property name="hibernate.connection.password" value="000000" />
+<property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/ServerWS" />
+<property name="hibernate.connection.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+<property name="hibernate.hbm2ddl.auto" value="update" />
+
+<!--Configuracoes de Debug -->
+<property name="hibernate.show_sql" value="true" />
+<property name="hibernate.format_sql" value="true" />
+<property name="use_sql_comments" value="true" />
+
+</properties>
+</persistence-unit>
+</persistence>
