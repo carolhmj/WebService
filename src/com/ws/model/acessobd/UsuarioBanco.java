@@ -24,7 +24,7 @@ public class UsuarioBanco {
 	@Path("/add")
 	@POST
 	@Consumes("application/json")
-	@Produces("plain/text")
+	@Produces("application/json")
 	public String persistirDados(Usuario usuario){
 		
 		manager.getTransaction().begin();
@@ -35,8 +35,8 @@ public class UsuarioBanco {
 	}
 	
 	@Path("/pesquisar")
-	@GET
-	@Consumes("text/plain")
+	@POST
+	@Consumes("application/json")
 	@Produces("application/json")
 	public List<Usuario> retornarDados(String nomeUsuario){
 		
